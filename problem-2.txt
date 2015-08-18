@@ -1,0 +1,28 @@
+start(
+	one(one),
+	two(two),
+	three(three),
+	four(four),
+	on(one, two),
+	on(two, three),
+	on(three, four),
+	clear(one),
+	stacking(one),
+	stacking(two),
+	stacking(three),
+	pileA(one),
+	pileA(two),
+	pileA(three),
+	pileA(four),
+	pileBEmpty,
+	pileCEmpty,
+	pileDEmpty,
+	free
+)
+
+goal(
+	pileD(one),
+	pileD(two),
+	pileD(three),
+	pileD(four)
+)

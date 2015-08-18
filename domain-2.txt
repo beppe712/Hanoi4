@@ -1,0 +1,255 @@
+operator unstackOneFromA(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileA(Obj), pileA(UnderObj), one(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileA(Obj), ~free, ~stacking(Obj)
+
+operator stackOneOnA(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileA(UnderObj), one(Obj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileA(Obj), free, stacking(Obj)
+
+operator unstackOneFromALast(Obj)
+pre: clear(Obj), pileA(Obj), one(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileA(Obj), ~free, pileAEmpty
+
+operator stackOneOnAEmpty(Obj)
+pre: holding(Obj), pileAEmpty, one(Obj)
+post: clear(Obj), ~holding(Obj), pileA(Obj), free, ~pileAEmpty
+
+operator unstackOneFromB(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileB(Obj), pileB(UnderObj), one(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileB(Obj), ~free, ~stacking(Obj)
+
+operator stackOneOnB(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileB(UnderObj), one(Obj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileB(Obj), free, stacking(Obj)
+
+operator unstackOneFromBLast(Obj)
+pre: clear(Obj), pileB(Obj), one(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileB(Obj), ~free, pileBEmpty
+
+operator stackOneOnBEmpty(Obj)
+pre: holding(Obj), pileBEmpty, one(Obj)
+post: clear(Obj), ~holding(Obj), pileB(Obj), free, ~pileBEmpty
+
+operator unstackOneFromC(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileC(Obj), pileC(UnderObj), one(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileC(Obj), ~free, ~stacking(Obj)
+
+operator stackOneOnC(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileC(UnderObj), one(Obj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileC(Obj), free, stacking(Obj)
+
+operator unstackOneFromCLast(Obj)
+pre: clear(Obj), pileC(Obj), one(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileC(Obj), ~free, pileCEmpty
+
+operator stackOneOnCEmpty(Obj)
+pre: holding(Obj), pileCEmpty, one(Obj)
+post: clear(Obj), ~holding(Obj), pileC(Obj), free, ~pileCEmpty
+
+operator unstackOneFromD(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileD(Obj), pileD(UnderObj), one(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileD(Obj), ~free, ~stacking(Obj)
+
+operator stackOneOnD(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileD(UnderObj), one(Obj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileD(Obj),free, stacking(Obj)
+
+operator unstackOneFromDLast(Obj)
+pre: clear(Obj), pileD(Obj), one(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileD(Obj), ~free, pileDEmpty
+
+operator stackOneOnDEmpty(Obj)
+pre: holding(Obj), pileDEmpty, one(Obj)
+post: clear(Obj), ~holding(Obj), pileD(Obj), free, ~pileDEmpty
+
+operator unstackTwoFromA(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileA(Obj), pileA(UnderObj), two(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileA(Obj), ~free, ~stacking(Obj)
+
+operator stackTwoOnA(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileA(UnderObj), two(Obj), ~one(UnderObj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileA(Obj), free, stacking(Obj)
+
+operator unstackTwoFromALast(Obj)
+pre: clear(Obj), pileA(Obj), two(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileA(Obj), ~free, pileAEmpty
+
+operator stackTwoOnAEmpty(Obj)
+pre: holding(Obj), pileAEmpty, two(Obj)
+post: clear(Obj), ~holding(Obj), pileA(Obj), free, ~pileAEmpty
+
+operator unstackTwoFromB(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileB(Obj), pileB(UnderObj), two(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileB(Obj), ~free, ~stacking(Obj)
+
+operator stackTwoOnB(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileB(UnderObj), two(Obj), ~one(UnderObj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileB(Obj), free, stacking(Obj)
+
+operator unstackTwoFromBLast(Obj)
+pre: clear(Obj), pileB(Obj), two(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileB(Obj), ~free, pileBEmpty
+
+operator stackTwoOnBEmpty(Obj)
+pre: holding(Obj), pileBEmpty, two(Obj)
+post: clear(Obj), ~holding(Obj), pileB(Obj), free, ~pileBEmpty
+
+operator unstackTwoFromC(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileC(Obj), pileC(UnderObj), two(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileC(Obj), ~free, ~stacking(Obj)
+
+operator stackTwoOnC(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileC(UnderObj), two(Obj), ~one(UnderObj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileC(Obj), free, stacking(Obj)
+
+operator unstackTwoFromCLast(Obj)
+pre: clear(Obj), pileC(Obj), two(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileC(Obj), ~free, pileCEmpty
+
+operator stackTwoOnCEmpty(Obj)
+pre: holding(Obj), pileCEmpty, two(Obj)
+post: clear(Obj), ~holding(Obj), pileC(Obj), free, ~pileCEmpty
+
+operator unstackTwoFromD(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileD(Obj), pileD(UnderObj), two(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileD(Obj), ~free, ~stacking(Obj)
+
+operator stackTwoOnD(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileD(UnderObj), two(Obj), ~one(UnderObj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileD(Obj), free, stacking(Obj)
+
+operator unstackTwoFromDLast(Obj)
+pre: clear(Obj), pileD(Obj), two(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileD(Obj), ~free, pileDEmpty
+
+operator stackTwoOnDEmpty(Obj)
+pre: holding(Obj), pileDEmpty, two(Obj)
+post: clear(Obj), ~holding(Obj), pileD(Obj), free, ~pileDEmpty
+
+operator unstackThreeFromA(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileA(Obj), pileA(UnderObj), three(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileA(Obj), ~free, ~stacking(Obj)
+
+operator stackThreeOnA(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileA(UnderObj), three(Obj), ~one(UnderObj), ~two(UnderObj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileA(Obj), free, stacking(Obj)
+
+operator unstackThreeFromALast(Obj)
+pre: clear(Obj), pileA(Obj), three(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileA(Obj), ~free, pileAEmpty
+
+operator stackThreeOnAEmpty(Obj)
+pre: holding(Obj), pileAEmpty, three(Obj)
+post: clear(Obj), ~holding(Obj), pileA(Obj), free, ~pileAEmpty
+
+operator unstackThreeFromB(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileB(Obj), pileB(UnderObj), three(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileB(Obj), ~free, ~stacking(Obj)
+
+operator stackThreeOnB(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileB(UnderObj), three(Obj), ~one(UnderObj), ~two(UnderObj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileB(Obj), free, stacking(Obj)
+
+operator unstackThreeFromBLast(Obj)
+pre: clear(Obj), pileB(Obj), three(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileB(Obj), ~free, pileBEmpty
+
+operator stackThreeOnBEmpty(Obj)
+pre: holding(Obj), pileBEmpty, three(Obj)
+post: clear(Obj), ~holding(Obj), pileB(Obj), free, ~pileBEmpty
+
+operator unstackThreeFromC(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileC(Obj), pileC(UnderObj), three(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileC(Obj), ~free, ~stacking(Obj)
+
+operator stackThreeOnC(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileC(UnderObj), three(Obj), ~one(UnderObj), ~two(UnderObj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileC(Obj), free, stacking(Obj)
+
+operator unstackThreeFromCLast(Obj)
+pre: clear(Obj), pileC(Obj), three(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileC(Obj), ~free, pileCEmpty
+
+operator stackThreeOnCEmpty(Obj)
+pre: holding(Obj), pileCEmpty, three(Obj)
+post: clear(Obj), ~holding(Obj), pileC(Obj), free, ~pileCEmpty
+
+operator unstackThreeFromD(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileD(Obj), pileD(UnderObj), three(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileD(Obj), ~free, ~stacking(Obj)
+
+operator stackThreeOnD(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileD(UnderObj), three(Obj), ~one(UnderObj), ~two(UnderObj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileD(Obj), free, stacking(Obj)
+
+operator unstackThreeFromDLast(Obj)
+pre: clear(Obj), pileD(Obj), three(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileD(Obj), ~free, pileDEmpty
+
+operator stackThreeOnDEmpty(Obj)
+pre: holding(Obj), pileDEmpty, three(Obj)
+post: clear(Obj), ~holding(Obj), pileD(Obj), free, ~pileDEmpty
+
+operator unstackFourFromA(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileA(Obj), pileA(UnderObj), four(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileA(Obj), ~free, ~stacking(Obj)
+
+operator stackFourOnA(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileA(UnderObj), four(Obj), ~one(UnderObj), ~two(UnderObj), ~three(UnderObj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileA(Obj), free, stacking(Obj)
+
+operator unstackFourFromALast(Obj)
+pre: clear(Obj), pileA(Obj), four(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileA(Obj), ~free, pileAEmpty
+
+operator stackFourOnAEmpty(Obj)
+pre: holding(Obj), pileAEmpty, four(Obj)
+post: clear(Obj), ~holding(Obj), pileA(Obj), free, ~pileAEmpty
+
+operator unstackFourFromB(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileB(Obj), pileB(UnderObj), four(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileB(Obj), ~free, ~stacking(Obj)
+
+operator stackFourOnB(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileB(UnderObj), four(Obj), ~one(UnderObj), ~two(UnderObj), ~three(UnderObj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileB(Obj), free, stacking(Obj)
+
+operator unstackFourFromBLast(Obj)
+pre: clear(Obj), pileB(Obj), four(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileB(Obj), ~free, pileBEmpty
+
+operator stackFourOnBEmpty(Obj)
+pre: holding(Obj), pileBEmpty, four(Obj)
+post: clear(Obj), ~holding(Obj), pileB(Obj), free, ~pileBEmpty
+
+operator unstackFourFromC(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileC(Obj), pileC(UnderObj), four(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileC(Obj), ~free, ~stacking(Obj)
+
+operator stackFourOnC(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileC(UnderObj), four(Obj), ~one(UnderObj), ~two(UnderObj), ~three(UnderObj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileC(Obj), free, stacking(Obj)
+
+operator unstackFourFromCLast(Obj)
+pre: clear(Obj), pileC(Obj), four(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileC(Obj), ~free, pileCEmpty
+
+operator stackFourOnCEmpty(Obj)
+pre: holding(Obj), pileCEmpty, four(Obj)
+post: clear(Obj), ~holding(Obj), pileC(Obj), free, ~pileCEmpty
+
+operator unstackFourFromD(Obj, UnderObj)
+pre: on(Obj, UnderObj), clear(Obj), pileD(Obj), pileD(UnderObj), four(Obj), free
+post: holding(Obj), clear(UnderObj), ~on(Obj, UnderObj), ~clear(Obj), ~pileD(Obj), ~free, ~stacking(Obj)
+
+operator stackFourOnD(Obj, UnderObj)
+pre: clear(UnderObj), holding(Obj), pileD(UnderObj), four(Obj), ~one(UnderObj), ~two(UnderObj), ~three(UnderObj)
+post: clear(Obj), on(Obj, UnderObj), ~clear(UnderObj), ~holding(Obj), pileD(Obj), free, stacking(Obj)
+
+operator unstackFourFromDLast(Obj)
+pre: clear(Obj), pileD(Obj), four(Obj), free, ~stacking(Obj)
+post: holding(Obj), ~clear(Obj), ~pileD(Obj), ~free, pileDEmpty
+
+operator stackFourOnDEmpty(Obj)
+pre: holding(Obj), pileDEmpty, four(Obj)
+post: clear(Obj), ~holding(Obj), pileD(Obj), free, ~pileDEmpty

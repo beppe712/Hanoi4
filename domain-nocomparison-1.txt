@@ -1,0 +1,35 @@
+operator move4ToClear(Int, From, To)
+pre: hasFour(From), clear(To), top(Int, From), second(Second, From), third(Third, From), fourth(Fourth, From)
+post: ~hasFour(From), hasThree(From), ~clear(To), hasOne(To), ~top(Int, From), top(Int, To), ~second(Second, From), top(Second, From), ~third(Third, From), second(Third, From), ~fourth(Fourth, From), third(Fourth, From)
+
+operator move3ToClear(Int, From, To)
+pre: hasThree(From), clear(To), top(Int, From), second(Second, From), third(Third, From)
+post: ~hasThree(From), hasTwo(From), ~clear(To), hasOne(To), ~top(Int, From), top(Int, To), ~second(Second, From), top(Second, From), ~third(Third, From), second(Third, From)
+
+operator move2ToClear(Int, From, To)
+pre: hasTwo(From), clear(To), top(Int, From), second(Second, From)
+post: ~hasTwo(From), hasOne(From), ~clear(To), hasOne(To), ~top(Int, From), top(Int, To), ~second(Second, From), top(Second, From)
+
+operator move3to1(Int, From, To)
+pre: hasThree(From), hasOne(To), top(Int, From), second(Second, From), third(Third, From), top(Num, To)
+post: ~hasThree(From), hasTwo(From), ~hasOne(To), hasTwo(To), ~top(Int, From), top(Int, To), ~second(Second, From), top(Second, From), ~third(Third, From), second(Third, From), ~top(Num, To), second(Num, To)
+
+operator move2to1(Int, From, To)
+pre: hasTwo(From), hasOne(To), top(Int, From), second(Second, From), top(Num, To)
+post: ~hasTwo(From), hasOne(From), ~hasOne(To), hasTwo(To), ~top(Int, From), top(Int, To), ~second(Second, From), top(Second, From), ~top(Num, To), second(Num, To)
+
+operator move1to1(Int, From, To)
+pre: hasOne(From), hasOne(To), top(Int, From), top(Num, To)
+post: ~hasOne(From), clear(From), ~hasOne(To), hasTwo(To), ~top(Int,From), top(Int, To), ~top(Num, To), second(Num, To)
+
+operator move2to2(Int, From, To)
+pre: hasTwo(From), hasTwo(To), top(Int, From), second(Second, From), top(Num, To), second(Num2, To)
+post: ~hasTwo(From), hasOne(From), ~hasTwo(To), hasThree(To), ~top(Int, From), top(Int, To), ~second(Second, From), top(Second, From), ~top(Num, To), second(Num, To), ~second(Num2, To), third(Num2, To)
+
+operator move1to2(Int, From, To)
+pre: hasOne(From), hasTwo(To), top(Int, From), top(Num, To), second(Num2, To)
+post: ~hasOne(From), clear(From), ~hasTwo(To), hasThree(To), ~top(Int, From), top(Int, To), ~top(Num, To), second(Num, To), ~second(Num2, To), third(Num2, To)
+
+operator move1to3(Int, From, To)
+pre: hasOne(From), hasThree(To), top(Int, From), top(Num, To), second(Num2, To), third(Num3, To)
+post: ~hasOne(From), clear(From), ~hasThree(To), hasFour(To), ~top(Int, From), top(Int, To), ~top(Num, To), second(Num, To), ~second(Num2, To), third(Num2, To), ~third(Num3, To), fourth(Num3, To)

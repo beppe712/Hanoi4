@@ -1,0 +1,17 @@
+start(
+	top(1,a),
+	second(2,a),
+	third(3,a),
+	fourth(4,a),
+	hasFour(a),
+	clear(b),
+	clear(c),
+	clear(d)
+)
+
+goal(
+	top(1,d),
+	second(2,d),
+	third(3,d),
+	fourth(4,d)
+)
